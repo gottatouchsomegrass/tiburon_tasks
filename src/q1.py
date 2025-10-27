@@ -1,19 +1,4 @@
 #!/usr/bin/env python3
-"""
-turtle_star.py
-
-Draw a 5-pointed star in turtlesim by publishing to /turtle1/cmd_vel
-Uses /turtle1/pose for closed-loop distance/angle control.
-
-Run:
-1) Launch turtlesim:
-   ros2 run turtlesim turtlesim_node
-2) Run this node:
-   ros2 run <your_package> turtle_star.py
-   or (for quick test) 
-   python3 turtle_star.py
-"""
-
 import math
 import rclpy
 from rclpy.node import Node
@@ -131,10 +116,6 @@ class StarDrawer(Node):
 
 
     def draw_star(self):
-        """
-        Draw a 5-pointed star. Approach: move forward then turn 144 degrees left,
-        repeated 5 times. Angle of 144 degrees (exterior turn) produces a star.
-        """
         # ensure we have pose
         self.wait_for_pose()
 
