@@ -9,7 +9,7 @@ import time
 
 class ShapeServer(Node):
     def __init__(self):
-        super().__init__('shape_server_time_based')
+        super().__init__('shape_server')
         self.publisher = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
         self.service = self.create_service(DrawShape, '/draw_shape', self.draw_shape_callback)
         self.get_logger().info("Shape server Running.")
